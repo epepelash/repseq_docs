@@ -550,9 +550,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hhh" class="md-nav__link">
+  <a href="#clonosets_1" class="md-nav__link">
     <span class="md-ellipsis">
-      hhh
+      Clonosets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clonosets" class="md-nav__link">
+    <span class="md-ellipsis">
+      clonosets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clonosets.find_all_exported_clonosets" class="md-nav__link">
+    <span class="md-ellipsis">
+      find_all_exported_clonosets
     </span>
   </a>
   
@@ -2039,8 +2057,166 @@ In case there are no <code>.svg</code> images, the <code>.png</code> images are 
 
     </div>
 
-</div><h2 id="hhh">hhh</h2>
-<p>:::</p>
+</div><h2 id="clonosets_1">Clonosets</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="clonosets"></a>
+    <div class="doc doc-contents first">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="clonosets.find_all_exported_clonosets" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">find_all_exported_clonosets</span><span class="p">(</span><span class="n">folders</span><span class="p">,</span> <span class="n">chain</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">remove_non_target</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">non_target_threshold</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Main method of the Filter object - application of it to a clonoset</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>folders</code></td>
+            <td>
+                  <code>path or list of paths</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>clonoset in the form of Pandas DataFrame in
+MiXCR(3 or 4+ version), VDJtools or Bioadaptive formats.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>colnames</code></td>
+            <td>
+                  <code>dict</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Dictionary of available specific column names.
+Defaults to None - colnames imputed automatically.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>clonoset</code></td>            <td>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>clonoset after converting to common (VDJtools-like)
+format and applying functionality filtration and downsampling or taking top</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>repseq/clonosets.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-54">54</a></span>
+<span class="normal"><a href="#__codelineno-0-55">55</a></span>
+<span class="normal"><a href="#__codelineno-0-56">56</a></span>
+<span class="normal"><a href="#__codelineno-0-57">57</a></span>
+<span class="normal"><a href="#__codelineno-0-58">58</a></span>
+<span class="normal"><a href="#__codelineno-0-59">59</a></span>
+<span class="normal"><a href="#__codelineno-0-60">60</a></span>
+<span class="normal"><a href="#__codelineno-0-61">61</a></span>
+<span class="normal"><a href="#__codelineno-0-62">62</a></span>
+<span class="normal"><a href="#__codelineno-0-63">63</a></span>
+<span class="normal"><a href="#__codelineno-0-64">64</a></span>
+<span class="normal"><a href="#__codelineno-0-65">65</a></span>
+<span class="normal"><a href="#__codelineno-0-66">66</a></span>
+<span class="normal"><a href="#__codelineno-0-67">67</a></span>
+<span class="normal"><a href="#__codelineno-0-68">68</a></span>
+<span class="normal"><a href="#__codelineno-0-69">69</a></span>
+<span class="normal"><a href="#__codelineno-0-70">70</a></span>
+<span class="normal"><a href="#__codelineno-0-71">71</a></span>
+<span class="normal"><a href="#__codelineno-0-72">72</a></span>
+<span class="normal"><a href="#__codelineno-0-73">73</a></span>
+<span class="normal"><a href="#__codelineno-0-74">74</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="k">def</span><span class="w"> </span><span class="nf">find_all_exported_clonosets</span><span class="p">(</span><span class="n">folders</span><span class="p">,</span> <span class="n">chain</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">remove_non_target</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">non_target_threshold</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="sd">    Main method of the Filter object - application of it to a clonoset</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57"></a>
+<a id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="sd">    Args:</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="sd">        folders (path or list of paths): clonoset in the form of Pandas DataFrame in</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="sd">            MiXCR(3 or 4+ version), VDJtools or Bioadaptive formats.</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="sd">        colnames (dict, optional): Dictionary of available specific column names.</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="sd">            Defaults to None - colnames imputed automatically.</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63"></a>
+<a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="sd">    Returns:</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="sd">        clonoset (pd.DataFrame): clonoset after converting to common (VDJtools-like)</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="sd">            format and applying functionality filtration and downsampling or taking top</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67"></a>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">folders</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70"></a>        <span class="n">folders</span> <span class="o">=</span> <span class="p">[</span><span class="n">folders</span><span class="p">]</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71"></a>    <span class="n">clonosets_dfs</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72"></a>    <span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">folders</span><span class="p">:</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73"></a>        <span class="n">clonosets_dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">find_all_exported_clonosets_in_folder</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">chain</span><span class="o">=</span><span class="n">chain</span><span class="p">,</span> <span class="n">remove_non_target</span><span class="o">=</span><span class="n">remove_non_target</span><span class="p">,</span> <span class="n">non_target_threshold</span><span class="o">=</span><span class="n">non_target_threshold</span><span class="p">))</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74"></a>    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">clonosets_dfs</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
 
 
 
