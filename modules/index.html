@@ -885,7 +885,7 @@
 
 
 <h1 id="modules">Modules</h1>
-<h2 id="clonosets"><a href="../functions/#clonosets">Clonosets</a></h2>
+<h2 id="clonosets"><a href="../functions/#Clonosets">Clonosets</a></h2>
 <p>Manipulations with groups of clonosets:</p>
 <ul>
 <li>Creates clonosets DataFrames by searching for typical filenames in directories</li>
@@ -893,7 +893,7 @@
 <li>Filters out non-target clonosets (same sample_id but low % of reads)</li>
 <li>Pools clonosets into one</li>
 </ul>
-<h2 id="stats">Stats</h2>
+<h2 id="stats"><a href="../functions/#Stats">Stats</a></h2>
 <ul>
 <li>Basic clonoset properties, like clone/read/umi counts functional or with OOF/Stops</li>
 <li>CDR3 amino acid properties: N-counts, physico-chemical properties, Kidera Factors</li>
@@ -902,7 +902,7 @@
 <li>V/D/J/C-gene frequencies or VJ-combinations</li>
 <li>All calculations are parallelized</li>
 </ul>
-<h2 id="intersections">Intersections</h2>
+<h2 id="intersections"><a href="../functions/#Intersections">Intersections</a></h2>
 <ul>
 <li>Finds parwise intersecting clonotypes between clonosets</li>
 <li>Intersection metrics: F, F2, D</li>
@@ -910,7 +910,7 @@
 <li>Intersect clusters with clonosets</li>
 <li>TCRnet integration</li>
 </ul>
-<h2 id="clustering">Clustering</h2>
+<h2 id="clustering"><a href="../functions/#Clustering">Clustering</a></h2>
 <p>This module implements different immune repertoire clustering analyses:</p>
 <ul>
 <li>basic clustering: using hamming distance similarity in CDR3 regions and/or same V/J-segments</li>
@@ -921,9 +921,9 @@
 <li>output graphs and metadata to Cytoscape format</li>
 </ul>
 <p><br>Graph representation with NetworkX library.</p>
-<h2 id="diffexp">Diffexp</h2>
+<h2 id="diffexp"><a href="../functions/#diffexp">Diffexp</a></h2>
 <p>Finds differentially expressing clonotypes/clusters of clonotypes in CFSE-assays or similar experiments.</p>
-<h2 id="clone-filter">Clone Filter</h2>
+<h2 id="clone-filter"><a href="../functions/#Clone filter">Clone Filter</a></h2>
 <p>Easy filtering of clonosets by one Filter object, integrated with other analysis procedures.
 <br>Filtering includes following features:</p>
 <ul>
@@ -937,12 +937,12 @@
 <li>convert to vdjtools-like format</li>
 <li>combine (pool) clonotypes with similar features: CDR3/V/J</li>
 </ul>
-<h2 id="io-module">IO module</h2>
+<h2 id="io-module"><a href="../functions/#IO module">IO module</a></h2>
 <ul>
 <li>reads and understands clonosets of following formats: MiXCR 3/4, vdjtools, Adaptive Biosciences</li>
 <li>tsv, .gz, .zip</li>
 </ul>
-<h2 id="mixcr-module">MiXCR module</h2>
+<h2 id="mixcr-module"><a href="../functions/#MiXCR module">MiXCR module</a></h2>
 <p>As MiXCR is the leading software for generating clonoset tables from raw FastQ files this module helps to run MiXCR 4.3+ batch analises with SLURM queue manager.</p>
 <p><br>Easy accumulation of most sensible processing data from json-reports of MiXCR into one table.</p>
 
