@@ -475,6 +475,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#setting-up-the-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up the environment
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -786,23 +795,24 @@
 <h1 id="installation">Installation</h1>
 <h2 id="library-installation">Library installation</h2>
 <ul>
-<li>Create a folder ~/soft: <code>mkdir ~/soft</code></li>
-<li>Enter the folder: <code>cd ~/soft</code></li>
-<li>Clone the library: <code>git clone https://github.com/mmjmike/repseq</code></li>
-<li>To update the library: 
+<li>Clone the library into a designated directory: <code>git clone https://github.com/mmjmike/repseq</code></li>
+<li>To update the library use <code>git pull -p</code> inside its folder
+For instance, if <code>~/soft</code> directory is used:
+    <code>mkdir ~/soft</code>
+    <code>cd ~/soft</code>
+    <code>git clone https://github.com/mmjmike/repseq</code>
     <code>cd ~/soft/repseq</code>
     <code>git pull -p</code></li>
 </ul>
+<h2 id="setting-up-the-environment">Setting up the environment</h2>
 <p>To resolve all dependencies, you need to set up a Conda environment:
-Download the file main_repseq.yml, for example, into the folder ~/resources/conda_envs for better organization.
-Enter that folder: cd ~/resources/conda_envs
-Make sure Conda is working: You should see (base) or another environment name on the left side of the command prompt. If it’s not active, run: conda activate bash
-Create the environment and install packages from the .yml file: conda env create -n main_repseq -f main_repseq.yml
--n is used to specify the environment name. You can use another name if you prefer.
-Wait for all dependencies to finish installing.
-After some time, the new environment will appear in the environment list in Jupyter Hub.</p>
-<p>In Jupyter Hub, make sure to select the installed environment from the menu in the upper-right corner.</p>
-<p>For clustering and calculating statistics, I recommend running the Jupyter Hub server in a short session with 32 processors, to fully utilize parallel computations during clustering.</p>
+* Download the file main_repseq.yml, for example, into the folder <code>~/resources/conda_envs</code>
+* Enter that folder: <code>cd ~/resources/conda_envs</code>
+* Make sure Conda is working: You should see (base) or another environment name on the left side of the command prompt. If it’s not active, run: <code>conda activate bash</code>
+* Create the environment and install dependencies from the .yml file: <code>conda env create -n main_repseq -f main_repseq.yml</code> (-n is used to specify the environment name)
+* Wait for all dependencies to finish installing. Shortly after that, the new environment will appear in the environment list in Jupyter Hub.</p>
+<p>In Jupyter Hub, make sure to select the installed environment from the menu in the upper-right corner.
+For clustering and calculating statistics, it's recommended to run the Jupyter Hub server in a short session with 32 processors to fully utilize parallel computations during clustering.</p>
 
 
 
