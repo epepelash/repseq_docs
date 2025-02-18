@@ -642,9 +642,9 @@ May be used to filter clonosets:
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>-</code></td>
+            <td><code>name</code></td>
             <td>
-                  <code>name (str</code>
+                  <code>str</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -652,13 +652,13 @@ May be used to filter clonosets:
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>&#39;default_filter&#39;</code>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>-</code></td>
+            <td><code>functionality</code></td>
             <td>
-                  <code>functionality (str</code>
+                  <code>str</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -671,13 +671,13 @@ May be used to filter clonosets:
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>&#39;a&#39;</code>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>-</code></td>
+            <td><code>downsample</code></td>
             <td>
-                  <code>downsample (int</code>
+                  <code>int</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -686,13 +686,13 @@ default value 'None' - means not to apply downsampling</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>-</code></td>
+            <td><code>top</code></td>
             <td>
-                  <code>top (int</code>
+                  <code>int</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -701,13 +701,13 @@ default value 'None' - means not to apply top</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>-</code></td>
+            <td><code>by_umi</code></td>
             <td>
-                  <code>by_umi (bool</code>
+                  <code>bool</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -716,13 +716,13 @@ default value 'None' - means not to apply top</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>False</code>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>-</code></td>
+            <td><code>mix_tails</code></td>
             <td>
-                  <code>mix_tails (bool</code>
+                  <code>bool</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -732,13 +732,13 @@ clonotypes with the same size in read or UMIs.</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>False</code>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>-</code></td>
+            <td><code>count_threshold</code></td>
             <td>
-                  <code>count_threshold (int</code>
+                  <code>int</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -747,13 +747,13 @@ be filtered out</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>-</code></td>
+            <td><code>seed</code></td>
             <td>
-                  <code>seed (any hashable type</code>
+                  <code>any hashable type</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -762,7 +762,7 @@ be filtered out</p>
               </div>
             </td>
             <td>
-                <em>required</em>
+                  <code>None</code>
             </td>
           </tr>
       </tbody>
@@ -1365,25 +1365,25 @@ be filtered out</p>
 <a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="sd">        - take top clonotypes by size (number of reads of UMIs) with or without random mixing</span>
 <a id="__codelineno-0-20" name="__codelineno-0-20"></a>
 <a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="sd">    Args:</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="sd">        - name (str): the name of the filter. Will be displayed in print</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="sd">        - functionality (str): Possible values:</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="sd">        name (str): the name of the filter. Will be displayed in print</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="sd">        functionality (str): Possible values:</span>
 <a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="sd">            - &quot;a&quot; - any (default). No clones are filtered out</span>
 <a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="sd">            - &quot;f&quot; - only functional. Those, not having stop codons and </span>
 <a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="sd">                frame shifts in CDR3 regions, or having non-empty values in CDR3 amino-acid</span>
 <a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="sd">                sequence</span>
 <a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="sd">            - &quot;n&quot; - only-nonfunctional - opposite to &quot;f&quot; - functional</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="sd">        - downsample (int): the number of reads/UMIs to randomly downsample the clonoset to.</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="sd">        downsample (int): the number of reads/UMIs to randomly downsample the clonoset to.</span>
 <a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="sd">            default value &#39;None&#39; - means not to apply downsampling</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="sd">        - top (int): the number of top biggest by reads/UMIs clonotypes to take from the clonoset.</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="sd">        top (int): the number of top biggest by reads/UMIs clonotypes to take from the clonoset.</span>
 <a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="sd">            default value &#39;None&#39; - means not to apply top</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="sd">        - by_umi (bool): default=False. Which column to take for clonotype count - reads or UMIs </span>
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="sd">        by_umi (bool): default=False. Which column to take for clonotype count - reads or UMIs </span>
 <a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="sd">            (if UMI count column exists).</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="sd">        - mix_tails (bool): default=False. Defines whether to randomly mix-up the order of clonotypes</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="sd">        mix_tails (bool): default=False. Defines whether to randomly mix-up the order of clonotypes</span>
 <a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="sd">            before sorting by size and taking the top clonotypes. Basically mix_tails=True mixes up </span>
 <a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="sd">            clonotypes with the same size in read or UMIs.</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="sd">        - count_threshold (int): limits [0:100000], all clonotypes with count less than this value will</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="sd">        count_threshold (int): limits [0:100000], all clonotypes with count less than this value will</span>
 <a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="sd">            be filtered out</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="sd">        - seed (any hashable type): better to use int - seed for reproducibility of random events </span>
+<a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="sd">        seed (any hashable type): better to use int - seed for reproducibility of random events </span>
 <a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="sd">            (downsampling or top with mix-tails). Default=None.</span>
 <a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="sd">    &quot;&quot;&quot;</span>
 <a id="__codelineno-0-43" name="__codelineno-0-43"></a>
